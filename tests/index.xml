@@ -1,0 +1,20 @@
+<Index>
+    <LastID>2</LastID>
+    <ListOfSnapshots>
+        <Snapshot>
+            <ID>0</ID>
+            <TimeStamp>2013-03-01</TimeStamp>
+            <Commentar>First version</Commentar>
+        </Snapshot>
+        <Snapshot>
+            <ID>1</ID>
+            <TimeStamp>2013-03-02</TimeStamp>
+            <Commentar>exception inserted</Commentar>
+        </Snapshot>
+        <Snapshot>
+            <ID>2</ID>
+            <TimeStamp>2013-03-03</TimeStamp>
+            <Commentar>exception deleted</Commentar>
+        </Snapshot>
+    </ListOfSnapshots>
+</Index>
