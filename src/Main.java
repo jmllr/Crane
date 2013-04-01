@@ -31,5 +31,11 @@ public class Main {
             System.out.println("This is restore for id " + args[1]);
         }
 
+
+        if (args[0].equals("test"))  {
+
+            Index test = new Index();
+            test.readTestFile();
+        }
     }
 }
