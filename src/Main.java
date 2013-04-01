@@ -9,19 +9,26 @@ public class Main {
         }
 
         if (args[0].equals("init"))  {
-            System.out.println("Das ist init");
+            System.out.println("This is init");
         }
 
         if (args[0].equals("history"))  {
-            System.out.println("Das ist history");
+            System.out.println("This is history");
         }
 
         if (args[0].equals("snapshot"))  {
-            System.out.println("Das ist snapshot");
+            System.out.println("This is snapshot");
         }
 
         if (args[0].equals("restore"))  {
-            System.out.println("Das ist restore");
+
+            if (args.length == 1) {
+             System.out.println("id is not specified!");
+
+                return;
+
+            }
+            System.out.println("This is restore for id " + args[1]);
         }
 
     }
