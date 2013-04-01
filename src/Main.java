@@ -35,7 +35,8 @@ public class Main {
         if (args[0].equals("test"))  {
 
             Index test = new Index();
-            test.readTestFile();
+            //test.readTestFile();
+            test.writeTestFile();
         }
     }
 }

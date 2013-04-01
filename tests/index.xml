@@ -1,4 +1,4 @@
-<Index>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Index>
     <LastID>2</LastID>
     <ListOfSnapshots>
         <Snapshot>
@@ -16,5 +16,5 @@
             <TimeStamp>2013-03-03</TimeStamp>
             <Commentar>exception deleted</Commentar>
         </Snapshot>
-    </ListOfSnapshots>
+    <test>test</test></ListOfSnapshots>
 </Index>
