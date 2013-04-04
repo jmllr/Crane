@@ -1,5 +1,7 @@
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+
+import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
@@ -22,6 +24,20 @@ import org.xml.sax.SAXException;
 // http://www.mkyong.com/tutorials/java-xml-tutorials/
 
 public class Index {
+
+    /*
+    * TODOs:
+    * - Implement adding of a new snapshot
+    * - Implement extracting of a snapshot information for a given ID
+    * - Implement function which creates a folder with the given name
+    * - Implement a function which copies files from one folder to another
+    * - Implement JUNIT tests for all small functions
+    *
+    * */
+
+    public int add(int a, int b) {
+        return a + b;
+    }
 
     public void readTestFile () {
          try {
