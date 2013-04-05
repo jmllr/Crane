@@ -88,9 +88,23 @@ public class Index {
             Node listOfSnapshots = doc.getElementsByTagName("ListOfSnapshots").item(0);
 
             // append a new node to ListOfSnapshots
-            Element test = doc.createElement("test");
-            test.appendChild(doc.createTextNode("test"));
-            listOfSnapshots.appendChild(test);
+            Element snapshot = doc.createElement("Snapshot");
+            Element ID = doc.createElement("ID");
+            ID.appendChild(doc.createTextNode("3"));
+            snapshot.appendChild(ID);
+            Element TimeStamp = doc.createElement("TimeStamp");
+            TimeStamp.appendChild(doc.createTextNode("2013-04-05"));
+            snapshot.appendChild(TimeStamp);
+            Element Commentar = doc.createElement("Commentar");
+            Commentar.appendChild(doc.createTextNode("tu-tu-tu"));
+            snapshot.appendChild(Commentar);
+            listOfSnapshots.appendChild(snapshot);
+
+            //update an ID of a last snapshot
+
+            Node lastID = doc.getElementsByTagName("LastID").item(0);
+            lastID.setTextContent("3");
+
 
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
