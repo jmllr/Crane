@@ -121,4 +121,44 @@ public class Index {
         }
     }
 
+    public void extractInformation(String ident)  {
+
+        try  {
+            File xmlFile = new File("tests/index.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+            //System.out.println("Snapshot " + ident + ":");
+            NodeList IDList = doc.getElementsByTagName("ID");
+            int flag = 0;
+            for (int temp = 0; temp < IDList.getLength(); temp++) {
+                if (ident.equals(IDList.item(temp).getTextContent()))   {
+
+                    System.out.println("Snapshot " + ident + ":");
+                         Node parentNode = IDList.item(temp).getParentNode();
+                         NodeList nList = parentNode.getChildNodes();
+                    for (int i = 0; i < nList.getLength(); i++) {
+                      System.out.println(nList.item(i).getNodeName() + ": " + nList.item(i).getTextContent());
+                        flag = 1;
+                    }
+                }
+
+            }
+            if (flag == 0)   {
+                System.out.println("Snapshot with ID "+ ident + " doesn't exists");
+            }
+
+            //String ID = doc.getElementsByTagName("ID").item(1).getTextContent();
+
+            //System.out.println(ID);
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

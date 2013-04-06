@@ -13,7 +13,9 @@ public class Main {
         }
 
         if (args[0].equals("history"))  {
-            System.out.println("This is history");
+            Index snapshot = new Index();
+             snapshot.extractInformation(args[1]);
+
         }
 
         if (args[0].equals("snapshot"))  {
