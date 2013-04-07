@@ -90,20 +90,20 @@ public class Index {
             // append a new node to ListOfSnapshots
             Element snapshot = doc.createElement("Snapshot");
             Element ID = doc.createElement("ID");
-            ID.appendChild(doc.createTextNode("3"));
+            ID.appendChild(doc.createTextNode("4"));
             snapshot.appendChild(ID);
             Element TimeStamp = doc.createElement("TimeStamp");
-            TimeStamp.appendChild(doc.createTextNode("2013-04-05"));
+            TimeStamp.appendChild(doc.createTextNode("2013-04-07"));
             snapshot.appendChild(TimeStamp);
             Element Commentar = doc.createElement("Commentar");
-            Commentar.appendChild(doc.createTextNode("tu-tu-tu"));
+            Commentar.appendChild(doc.createTextNode("tu-tu-tu-tu"));
             snapshot.appendChild(Commentar);
             listOfSnapshots.appendChild(snapshot);
 
             //update an ID of a last snapshot
 
             Node lastID = doc.getElementsByTagName("LastID").item(0);
-            lastID.setTextContent("3");
+            lastID.setTextContent("4");
 
 
 

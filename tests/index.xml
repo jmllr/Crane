@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><Index>
-    <LastID>3</LastID>
+    <LastID>4</LastID>
     <ListOfSnapshots>
         <Snapshot>
             <ID>0</ID>
@@ -16,5 +16,5 @@
             <TimeStamp>2013-03-03</TimeStamp>
             <Commentar>exception deleted</Commentar>
         </Snapshot>
-    <Snapshot><ID>3</ID><TimeStamp>2013-04-05</TimeStamp><Commentar>tu-tu-tu</Commentar></Snapshot></ListOfSnapshots>
+        <Snapshot><ID>3</ID><TimeStamp>2013-04-05</TimeStamp><Commentar>tu-tu-tu</Commentar></Snapshot><Snapshot><ID>4</ID><TimeStamp>2013-04-07</TimeStamp><Commentar>tu-tu-tu-tu</Commentar></Snapshot><Snapshot><ID>4</ID><TimeStamp>2013-04-07</TimeStamp><Commentar>tu-tu-tu-tu</Commentar></Snapshot></ListOfSnapshots>
 </Index>
