@@ -1,11 +1,12 @@
+import java.util.Date;
 
 public class Snapshot {
 
-    public String getCommentar() {
-        return commentar;
+    public String getComment() {
+        return comment;
     }
 
-    public int getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
@@ -14,13 +15,13 @@ public class Snapshot {
     }
 
     private int id;
-    private int timestamp;
-    private String commentar;
+    private long timestamp;
+    private String comment;
 
 
-    public Snapshot(int id, int timestamp, String commentar) {
+    public Snapshot(int id, Date date, String comment) {
         this.id = id;
-        this.timestamp = timestamp;
-        this.commentar = commentar;
+        this.timestamp = date.getTime();
+        this.comment = comment;
     }
 }
