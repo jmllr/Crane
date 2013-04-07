@@ -19,9 +19,13 @@ public class Snapshot {
     private String comment;
 
 
-    public Snapshot(int id, Date date, String comment) {
-        this.id = id;
+    public Snapshot(Date date, String comment) {
         this.timestamp = date.getTime();
         this.comment = comment;
+    }
+
+    public Snapshot(int id, Date date, String comment) {
+        this(date, comment);
+        this.id = id;
     }
 }

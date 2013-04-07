@@ -161,4 +161,11 @@ public class Index {
 
     }
 
+
+    public boolean addSnapshot(Snapshot s) {
+
+
+
+    }
+
 }
