@@ -13,7 +13,7 @@ public class Main {
         }
 
         if (args[0].equals("history"))  {
-            Index snapshot = new Index();
+            Index snapshot = new Index("tests/index.xml");
              snapshot.extractInformation(args[1]);
 
         }
@@ -36,7 +36,7 @@ public class Main {
 
         if (args[0].equals("test"))  {
 
-            Index test = new Index();
+            Index test = new Index("tests/index.xml");
             //test.readTestFile();
             test.writeTestFile();
         }

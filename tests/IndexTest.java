@@ -1,6 +1,9 @@
 import org.junit.Test;
 
+import java.util.Date;
+
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,9 +15,18 @@ import static junit.framework.Assert.assertEquals;
 public class IndexTest {
 
     @Test
-    public void testAdd(){
-        Index i = new Index();
-        assertEquals(5, i.add(2, 3));
+    public void testAddSnapshot(){
+        Index i = new Index("tests/index.xml");
+        Snapshot s = new Snapshot(new Date(), "tra la la");
+
+        int id = i.addSnapshot(s);
+
+        assertTrue(id >= 0);
+
+        int id2 = i.addSnapshot(s);
+
+        assertTrue(id2 == id + 1);
+
     }
 
 }

@@ -35,11 +35,14 @@ public class Index {
     *
     * */
 
-    public int add(int a, int b) {
-        return a + b;
-    }
+
+
 
     private String filepath;
+
+    public Index(String filepath) {
+        this.filepath = filepath;
+    }
 
     public void readTestFile () {
          try {
@@ -164,7 +167,7 @@ public class Index {
     }
 
 
-    public boolean addSnapshot(Snapshot s) {
+    public int addSnapshot(Snapshot s) {
 
      // extract last ID from Index
       int id;
@@ -212,13 +215,13 @@ public class Index {
             StreamResult result = new StreamResult(new File(filepath));
             transformer.transform(source, result);
 
-            return true;
+            return id;
 
       }
 
        catch (Exception e) {
             e.printStackTrace();
-            return false   ;
+            return -1   ;
       }
 
 
