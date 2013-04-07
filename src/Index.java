@@ -39,6 +39,8 @@ public class Index {
         return a + b;
     }
 
+    private String filepath;
+
     public void readTestFile () {
          try {
              File xmlFile = new File("tests/index.xml");
@@ -163,6 +165,61 @@ public class Index {
 
 
     public boolean addSnapshot(Snapshot s) {
+
+     // extract last ID from Index
+      int id;
+      try {
+            File xmlFile = new File(filepath);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+
+            String ID = doc.getElementsByTagName("LastID").item(0).getTextContent();
+
+            id =  Integer.parseInt(ID);
+
+            id = id +1;
+
+            ID = Integer.toString(id);
+
+            // append a new node to ListOfSnapshots
+
+            Node listOfSnapshots = doc.getElementsByTagName("ListOfSnapshots").item(0);
+
+            // append a new node to ListOfSnapshots
+
+            Element snapshot = doc.createElement("Snapshot");
+            Element ident = doc.createElement("ID");
+            ident.appendChild(doc.createTextNode(ID));
+            snapshot.appendChild(ident);
+            Element timeStamp = doc.createElement("TimeStamp");
+            timeStamp.appendChild(doc.createTextNode(Long.toString(s.getTimestamp())));
+            snapshot.appendChild(timeStamp);
+            Element comment = doc.createElement("Commentar");
+            comment.appendChild(doc.createTextNode(s.getComment()));
+            snapshot.appendChild(comment);
+            listOfSnapshots.appendChild(snapshot);
+
+            //update an ID of a last snapshot
+
+            Node lastID = doc.getElementsByTagName("LastID").item(0);
+            lastID.setTextContent(ID);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(filepath));
+            transformer.transform(source, result);
+
+            return true;
+
+      }
+
+       catch (Exception e) {
+            e.printStackTrace();
+            return false   ;
+      }
 
 
 
