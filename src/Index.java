@@ -8,6 +8,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -237,26 +238,34 @@ public class Index {
           Document doc = dBuilder.parse(xmlFile);
           doc.getDocumentElement().normalize();
           NodeList IDList = doc.getElementsByTagName("ID");
-          int flag = 0;
+
           String identification = Integer.toString(id);
+          long timestamp = 0;
+          String comment = "Snapshot mit ID:" + identification + " existiert nicht";
           for (int temp = 0; temp < IDList.getLength(); temp++) {
               if (identification.equals(IDList.item(temp).getTextContent()))   {
 
-                  System.out.println("Snapshot " + identification + ":");
+
                   Node parentNode = IDList.item(temp).getParentNode();
                   NodeList nList = parentNode.getChildNodes();
+
                   for (int i = 0; i < nList.getLength(); i++) {
-                      System.out.println(nList.item(i).getNodeName() + ": " + nList.item(i).getTextContent());
-                      flag = 1;
+
+                      if(nList.item(i).getNodeName() == "TimeStamp") {
+                          timestamp = Long.valueOf(nList.item(i).getTextContent());
+                      }
+                      if(nList.item(i).getNodeName() == "Commentar") {
+                          comment = nList.item(i).getTextContent();
+                      }
+
+
+
                   }
               }
 
           }
-          if (flag == 0)   {
-              System.out.println("Snapshot with ID "+ identification + " doesn't exists");
-          }
-
-
+          Snapshot s = new Snapshot(id, new Date(timestamp * 1000), comment);
+          return s;
       }
       catch (Exception e) {
           e.printStackTrace();

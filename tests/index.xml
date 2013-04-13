@@ -16,5 +16,12 @@
             <TimeStamp>2013-03-03</TimeStamp>
             <Commentar>exception deleted</Commentar>
         </Snapshot>
-        <Snapshot><ID>3</ID><TimeStamp>2013-04-05</TimeStamp><Commentar>tu-tu-tu</Commentar></Snapshot><Snapshot><ID>4</ID><TimeStamp>2013-04-07</TimeStamp><Commentar>tu-tu-tu-tu</Commentar></Snapshot><Snapshot><ID>4</ID><TimeStamp>2013-04-07</TimeStamp><Commentar>tu-tu-tu-tu</Commentar></Snapshot><Snapshot><ID>5</ID><TimeStamp>1365338443264</TimeStamp><Commentar>tra la la</Commentar></Snapshot><Snapshot><ID>6</ID><TimeStamp>1365338769379</TimeStamp><Commentar>tra la la</Commentar></Snapshot><Snapshot><ID>7</ID><TimeStamp>1365338769379</TimeStamp><Commentar>tra la la</Commentar></Snapshot></ListOfSnapshots>
+        <Snapshot><ID>3</ID><TimeStamp>2013-04-05</TimeStamp><Commentar>tu-tu-tu</Commentar>
+        </Snapshot>
+        <Snapshot><ID>4</ID><TimeStamp>2013-04-07</TimeStamp><Commentar>tu-tu-tu-tu</Commentar></Snapshot>
+        <Snapshot><ID>4</ID><TimeStamp>2013-04-07</TimeStamp><Commentar>tu-tu-tu-tu</Commentar></Snapshot>
+        <Snapshot><ID>5</ID><TimeStamp>1365338443264</TimeStamp><Commentar>tra la la</Commentar></Snapshot>
+        <Snapshot><ID>6</ID><TimeStamp>1365338769379</TimeStamp><Commentar>tra la la</Commentar></Snapshot>
+        <Snapshot><ID>7</ID><TimeStamp>1365338769379</TimeStamp><Commentar>tra la la</Commentar></Snapshot>
+    </ListOfSnapshots>
 </Index>
