@@ -228,4 +228,39 @@ public class Index {
 
     }
 
+    public Snapshot getSnapshot (int id) {
+
+      try {
+          File xmlFile = new File(filepath);
+          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+          Document doc = dBuilder.parse(xmlFile);
+          doc.getDocumentElement().normalize();
+          NodeList IDList = doc.getElementsByTagName("ID");
+          int flag = 0;
+          String identification = Integer.toString(id);
+          for (int temp = 0; temp < IDList.getLength(); temp++) {
+              if (identification.equals(IDList.item(temp).getTextContent()))   {
+
+                  System.out.println("Snapshot " + identification + ":");
+                  Node parentNode = IDList.item(temp).getParentNode();
+                  NodeList nList = parentNode.getChildNodes();
+                  for (int i = 0; i < nList.getLength(); i++) {
+                      System.out.println(nList.item(i).getNodeName() + ": " + nList.item(i).getTextContent());
+                      flag = 1;
+                  }
+              }
+
+          }
+          if (flag == 0)   {
+              System.out.println("Snapshot with ID "+ identification + " doesn't exists");
+          }
+
+
+      }
+      catch (Exception e) {
+          e.printStackTrace();
+      }
+    }
+
 }
