@@ -31,7 +31,8 @@ public class IndexTest {
 
         int id3 = i.addSnapshot(s2);
         int id4 = i.getSnapshot(id3).getId();
-        assertTrue(id3 ==id4);
+        assertEquals(id3, id4);
+
 
     }
 
