@@ -173,11 +173,7 @@ public class Index {
      // extract last ID from Index
       int id;
       try {
-            File xmlFile = new File(filepath);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(xmlFile);
-            doc.getDocumentElement().normalize();
+            Document doc = getDoc();
 
             String ID = doc.getElementsByTagName("LastID").item(0).getTextContent();
 
@@ -229,19 +225,25 @@ public class Index {
 
     }
 
+    private Document getDoc() throws ParserConfigurationException, SAXException, IOException {
+        File xmlFile = new File(filepath);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(xmlFile);
+        doc.getDocumentElement().normalize();
+        return doc;
+    }
+
     public Snapshot getSnapshot (int id) {
 
       try {
-          File xmlFile = new File(filepath);
-          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-          Document doc = dBuilder.parse(xmlFile);
-          doc.getDocumentElement().normalize();
+          Document doc = getDoc();
           NodeList IDList = doc.getElementsByTagName("ID");
 
           String identification = Integer.toString(id);
           long timestamp = 0;
-          String comment = "Snapshot mit ID:" + identification + " existiert nicht";
+          String comment = "";
+          int flag = 0;
           for (int temp = 0; temp < IDList.getLength(); temp++) {
               if (identification.equals(IDList.item(temp).getTextContent()))   {
 
@@ -261,15 +263,18 @@ public class Index {
 
 
                   }
+                  flag = 1;
               }
 
           }
+          if (flag == 0) return null;
           Snapshot s = new Snapshot(id, new Date(timestamp * 1000), comment);
           return s;
       }
       catch (Exception e) {
           e.printStackTrace();
       }
+      return null;
     }
 
 }

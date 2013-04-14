@@ -17,7 +17,7 @@ public class IndexTest {
     @Test
     public void testAddSnapshot(){
         Index i = new Index("tests/index.xml");
-        Snapshot s = new Snapshot(new Date(), "tra la la");
+        Snapshot s = new Snapshot(new Date(), "Abendbrei");
 
         int id = i.addSnapshot(s);
 
@@ -26,6 +26,8 @@ public class IndexTest {
         int id2 = i.addSnapshot(s);
 
         assertTrue(id2 == id + 1);
+
+
 
     }
 
