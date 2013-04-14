@@ -27,10 +27,17 @@ public class IndexTest {
 
         assertTrue(id2 == id + 1);
 
+        
+
+    }
+    
+    public void testGetSnapshot() {
+        Index i = new Index("tests/index.xml");
         Snapshot s2 = new Snapshot(new Date(), "schönes Wetter heute");
 
         int id3 = i.addSnapshot(s2);
-        int id4 = i.getSnapshot(id3).getId();
+        Snapshot snapshot = i.getSnapshot(id3);
+        int id4 = snapshot.getId();
         assertEquals(id3, id4);
 
 

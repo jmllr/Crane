@@ -24,6 +24,16 @@ public class Snapshot {
         this.comment = comment;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+
+        if(!(obj instanceof Snapshot)) return false;
+
+        Snapshot s = (Snapshot) obj;
+
+        return super.equals(obj);    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
     public Snapshot(int id, Date date, String comment) {
         this(date, comment);
         this.id = id;

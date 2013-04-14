@@ -21,6 +21,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import java.util.List;
 
 // http://www.mkyong.com/tutorials/java-xml-tutorials/
 
@@ -275,6 +276,20 @@ public class Index {
           e.printStackTrace();
       }
       return null;
+    }
+
+    public List<Snapshot> getHistory() {
+
+        try {
+        Document doc = getDoc();
+
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
 }

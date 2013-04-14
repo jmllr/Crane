@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><Index>
-    <LastID>7</LastID>
+    <LastID>16</LastID>
     <ListOfSnapshots>
         <Snapshot>
             <ID>0</ID>
@@ -23,5 +23,5 @@
         <Snapshot><ID>5</ID><TimeStamp>1365338443264</TimeStamp><Commentar>tra la la</Commentar></Snapshot>
         <Snapshot><ID>6</ID><TimeStamp>1365338769379</TimeStamp><Commentar>tra la la</Commentar></Snapshot>
         <Snapshot><ID>7</ID><TimeStamp>1365338769379</TimeStamp><Commentar>tra la la</Commentar></Snapshot>
-    </ListOfSnapshots>
+    <Snapshot><ID>8</ID><TimeStamp>1365942699674</TimeStamp><Commentar>tra-la-la</Commentar></Snapshot><Snapshot><ID>9</ID><TimeStamp>1365942699674</TimeStamp><Commentar>tra-la-la</Commentar></Snapshot><Snapshot><ID>10</ID><TimeStamp>1365942700337</TimeStamp><Commentar>schönes Wetter heute</Commentar></Snapshot><Snapshot><ID>11</ID><TimeStamp>1365942780194</TimeStamp><Commentar>tra-la-la</Commentar></Snapshot><Snapshot><ID>12</ID><TimeStamp>1365942780194</TimeStamp><Commentar>tra-la-la</Commentar></Snapshot><Snapshot><ID>13</ID><TimeStamp>1365942780245</TimeStamp><Commentar>schönes Wetter heute</Commentar></Snapshot><Snapshot><ID>14</ID><TimeStamp>1365942891353</TimeStamp><Commentar>tra-la-la</Commentar></Snapshot><Snapshot><ID>15</ID><TimeStamp>1365942891353</TimeStamp><Commentar>tra-la-la</Commentar></Snapshot><Snapshot><ID>16</ID><TimeStamp>1365942891405</TimeStamp><Commentar>schönes Wetter heute</Commentar></Snapshot></ListOfSnapshots>
 </Index>
